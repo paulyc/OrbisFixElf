@@ -1,10 +1,11 @@
-COMPILER= clang-5.0
+COMPILER= gcc
 OUTPUTEXEC= orbisFixElf
 SOURCE_FILES= main.c myelf.c toolbox.c logger.c dyngen.c varray.c
-CFLAGS= -l elf -o
+CFLAGS= -g -lelf
 
 all: 
-	$(COMPILER) $(SOURCE_FILES) $(CFLAGS) $(OUTPUTEXEC)
+	$(COMPILER) $(SOURCE_FILES) $(CFLAGS) -o $(OUTPUTEXEC)
 	
 clean:
 	rm $(OUTPUTEXEC)
+.PHONY: clean
